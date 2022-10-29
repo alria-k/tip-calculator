@@ -1,0 +1,183 @@
+.container {
+    max-width: 1440px;
+    padding: 0 10px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.calculator {
+    background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    &__text {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__title {
+        letter-spacing: 10px;
+        font-size: 32px;
+        color: hsl(183, 100%, 15%)
+    }
+    &__box {
+        padding: 20px;
+        background-color: white;
+        border-radius: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        @media (max-width: 778px) {
+            justify-content: center;
+            max-width: 320px;
+            gap: 20px;
+        }
+    }
+    &__bill {
+        position: relative;
+        margin-bottom: 30px;
+        span{
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url('./images/icon-dollar.svg');
+                width: 11px;
+                height: 17px;
+                top: 35px;
+                left: 15px;
+            }
+        }
+    }
+    &__people{
+        position: relative;
+        span{
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url('./images/icon-person.svg');
+                width: 13px;
+                height: 16px;
+                top: 35px;
+                left: 15px;
+            }
+        }
+    }
+    &__left{
+        max-width: 355px;
+    }
+    &__inputs {
+        &-title {
+            font-size: 12px;
+            color: hsl(186, 14%, 43%);
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+    }
+    &__input {
+        direction: rtl;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 6px;
+        background-color: hsl(189, 41%, 97%);
+        padding: 10px;
+        &:focus{
+            background-color: hsl(189, 41%, 97%);
+            outline: 2px solid hsl(172, 67%, 45%);
+        }
+        &-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            @media (max-width: 778px) {
+                justify-content: center;
+            }
+        }
+        &-procent{
+            cursor: pointer;
+            padding: 10px 20px;
+            width: 28%;
+            background-color: hsl(183, 100%, 15%);
+            border-radius: 6px;
+            color: white;
+            text-align: center;
+            @media (max-width: 778px) {
+                width: 40%;
+            }
+            &--active{
+                color: hsl(183, 100%, 15%);
+                background-color: hsl(172, 67%, 45%);
+                outline: none;
+            }
+        }
+        &-custom{
+            cursor:text;
+            color: hsl(184, 14%, 56%);
+            background-color: hsl(189, 41%, 97%);
+            &:focus{
+                background-color: hsl(189, 41%, 97%);
+                outline: 2px solid hsl(172, 67%, 45%);
+            }
+        }
+    }
+    &__procent {
+        margin-bottom: 30px;
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+        row-gap: 100px;
+        justify-content: space-between;
+        padding: 30px;
+        background-color: hsl(183, 100%, 15%);
+        border-radius: 8px;
+        @media (max-width: 778px) {
+            row-gap: 30px;
+        }
+    }
+    &__summary {
+        &-text {
+            display: flex;
+            gap: 80px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &-p {
+            font-size: 14px;
+            color: white;
+            @media (max-width: 778px) {
+                font-size: 12px;
+            }
+            span{
+                font-size: 12px;
+                color: hsl(185, 41%, 84%);
+                @media (max-width: 778px) {
+                    font-size: 10px;
+                }
+            }
+        }
+        &-h1 {
+            color: hsl(172, 67%, 45%);
+            @media (max-width: 778px) {
+                font-size: 25px;
+            }
+        }
+    }
+    &__reset {
+        cursor: pointer;
+        padding: 10px 0;
+        border-radius: 8px;
+        color: hsl(183, 100%, 15%);
+        background-color: hsl(172, 67%, 45%);
+        &:disabled{
+            cursor: not-allowed;
+            background-color: hsl(184, 98%, 20%);;
+        }
+    }
+}
+.tip {
+    &-amount {
+        margin-bottom: 30px;
+    }
+}
